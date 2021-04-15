@@ -24,10 +24,11 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
   createBook() {
-    this.bookService.create(this.book).subscribe(() => {
-      this.router.navigate(['/']);
-    });
-  }
+      this.bookService.create(this.book).subscribe(() => {
+        this.router.navigate(['/']);
+      });
+    }
 
 }

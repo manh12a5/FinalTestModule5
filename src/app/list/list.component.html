@@ -1,30 +1,39 @@
-<h1>List Books</h1>
-
-<a [routerLink]="'/create'" class="btn btn-info">Create new book</a>
-<hr>
-<table class="table">
-  <thead class="thead-dark">
-  <tr>
-    <th scope="col">Name Book</th>
-    <th scope="col">Author</th>
-    <th scope="col" colspan="3">Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let book of books">
-    <td>
-      <a [routerLink]="'/view/' + (book.id)">
-        {{book.name}}
-      </a>
-    </td>
-    <td>{{book.author}}</td>
-    <td>
-      <button type="button" class="btn btn-outline-warning" [routerLink]="'/view/' + book.id">View</button>
-      <button type="button" class="btn btn-outline-warning" [routerLink]="'/edit/' + book.id">Edit</button>
-      <button type="button" class="btn btn-outline-danger" (click)="delete(book.id)">Delete</button>
-    </td>
-    <td>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<div style="background-color: ">
+  <div class="container">
+    <h1 style="text-align: center; color: red">List Books</h1>
+    <a [routerLink]="'/create'" class="btn btn-info">Create new book</a>
+  </div>
+  <hr style="width: 1100px; text-align: center">
+  <div class="container">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name Book</th>
+        <th scope="col">Author</th>
+        <th scope="col" colspan="4"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books">
+        <td>
+          <a [routerLink]="'/view/' + (book.id)">
+            {{book.name}}
+          </a>
+        </td>
+        <td>{{book.author}}</td>
+        <td>
+          <button type="button" class="btn btn-outline-success" [routerLink]="'/view/' + book.id">View</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-outline-warning" [routerLink]="'/edit/' + book.id">Edit</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-outline-danger" (click)="delete(book.id)">Delete</button>
+        </td>
+        <td>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
